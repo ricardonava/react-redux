@@ -6,12 +6,17 @@ import "./index.css";
 import store from "./store";
 import { getReadableStories } from "./selectors/story";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App
-      stories={getReadableStories(store.getState())}
-      onArchive={(id) => store.dispatch({ type: STORY_ARCHIVE, id })}
-    />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+function render() {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App
+        stories={getReadableStories(store.getState())}
+        onArchive={(id) => store.dispatch({ type: STORY_ARCHIVE, id })}
+      />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+}
+
+store.subscribe(render);
+render();
