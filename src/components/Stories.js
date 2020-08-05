@@ -24,15 +24,19 @@ const COLUMNS = {
   },
 };
 
+const StoriesHeader = ({ columns }) => (
+  <div className="stories-header">
+    {Object.keys(columns).map((key) => (
+      <span key={key} style={{ width: columns[key].width }}>
+        {columns[key].label}
+      </span>
+    ))}
+  </div>
+);
+
 const Stories = ({ stories }) => (
   <div className="stories">
-    <div className="stories-header">
-      {Object.keys(COLUMNS).map((key) => (
-        <span key={key} style={{ width: COLUMNS[key].width }}>
-          {COLUMNS[key].label}
-        </span>
-      ))}
-    </div>
+    <StoriesHeader columns={COLUMNS} />
     {(stories || []).map((story) => (
       <Story key={story.objectID} story={story} columns={COLUMNS} />
     ))}
