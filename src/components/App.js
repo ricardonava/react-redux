@@ -5,7 +5,7 @@ import "./App.css";
 export const App = ({ stories, onArchive }) => {
   return (
     <div className="app">
-      <Stories stories={stories} onArchive={onArchive} />
+      <Stories />
     </div>
   );
 };
