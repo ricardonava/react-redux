@@ -1,7 +1,8 @@
 import React from "react";
-import Stories from "./Stories";
-import SearchStories from "./SearchStories";
 import "./App.css";
+import Archived from "./Archived";
+import SearchStories from "./SearchStories";
+import Stories from "./Stories";
 
 export const App = () => {
   return (
@@ -9,6 +10,7 @@ export const App = () => {
       <div className="interactions">
         <SearchStories />
       </div>
+      <Archived />
       <Stories />
     </div>
   );
