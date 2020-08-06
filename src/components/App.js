@@ -10,8 +10,8 @@ export const App = () => {
       <div className="interactions">
         <SearchStories />
       </div>
-      <Archived />
       <Stories />
+      <Archived />
     </div>
   );
 };

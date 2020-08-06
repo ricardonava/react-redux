@@ -5,7 +5,7 @@ import { ButtonInline } from "./Button";
 import "./Story.css";
 
 const Story = ({ story, columns, onArchive }) => {
-  const { title, url, author, num_comments, points, objectID } = story;
+  const { title, url, author, num_comments, points } = story;
 
   return (
     <div className="story">
@@ -16,7 +16,7 @@ const Story = ({ story, columns, onArchive }) => {
       <span style={{ width: columns.comments.width }}>{num_comments}</span>
       <span style={{ width: columns.points.width }}>{points}</span>
       <span style={{ width: columns.archive.width }}>
-        <ButtonInline onClick={() => onArchive(objectID)}>Archive</ButtonInline>
+        <ButtonInline onClick={() => onArchive(story)}>Archive</ButtonInline>
       </span>
     </div>
   );
