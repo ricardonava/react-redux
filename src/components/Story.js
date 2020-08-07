@@ -4,7 +4,7 @@ import { doArchiveStory } from "../actions/archive";
 import { ButtonInline } from "./Button";
 import "./Story.css";
 
-const Story = ({ story, columns, onArchive }) => {
+const Story = ({ story, columns, onArchive, typeText }) => {
   const { title, url, author, num_comments, points } = story;
 
   return (
@@ -16,14 +16,14 @@ const Story = ({ story, columns, onArchive }) => {
       <span style={{ width: columns.comments.width }}>{num_comments}</span>
       <span style={{ width: columns.points.width }}>{points}</span>
       <span style={{ width: columns.archive.width }}>
-        <ButtonInline onClick={() => onArchive(story)}>Archive</ButtonInline>
+        <ButtonInline onClick={() => onArchive(story)}>{typeText}</ButtonInline>
       </span>
     </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onArchive: (id) => dispatch(doArchiveStory(id)),
+  onArchive: (story) => dispatch(doArchiveStory(story)),
 });
 
 export default connect(null, mapDispatchToProps)(Story);

@@ -30,7 +30,12 @@ const Stories = ({ stories }) => (
   <div className="stories">
     {stories.length > 0 ? <h3>Archived</h3> : null}
     {(stories || []).map((story) => (
-      <Story key={story.objectID} story={story} columns={COLUMNS} />
+      <Story
+        key={story.objectID}
+        story={story}
+        columns={COLUMNS}
+        typeText="Unarchive"
+      />
     ))}
   </div>
 );

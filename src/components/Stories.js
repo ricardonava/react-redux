@@ -40,7 +40,12 @@ const Stories = ({ stories }) => (
   <div className="stories">
     <StoriesHeader columns={COLUMNS} />
     {(stories || []).map((story) => (
-      <Story key={story.objectID} story={story} columns={COLUMNS} />
+      <Story
+        key={story.objectID}
+        story={story}
+        columns={COLUMNS}
+        typeText="Archive"
+      />
     ))}
   </div>
 );
