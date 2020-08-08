@@ -1,6 +1,7 @@
 import { STORY_ARCHIVE, STORY_UNARCHIVE } from "../constants/actionTypes";
+import { loadState } from "./../helpers/localStorage";
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = loadState();
 
 const applyArchiveStory = (state, action) => [...state, action.id];
 const applyUnArchiveStory = (state, action) =>
